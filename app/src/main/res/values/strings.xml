@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">XetaAnalytics</string>
+    <string name="blank_text">Dummy Text</string>
+    <string name="dietsnap">Dietsnap</string>
+    <string name="icon">Icon</string>
+    <string name="today">Today</string>
+    <string name="set_goal">SET GOAL</string>
+    <string name="diet_points">Diet Points</string>
+    <string name="exercise_points">Exercise Points</string>
+    <string name="blanknumber">150</string>
+    <string name="cal">Cal</string>
+    <string name="time">Time</string>
+    <string name="health_score">Health Score</string>
+    <string name="your_goals">Your Goals</string>
+    <string name="current_major_goal">Current Major Goal</string>
+    <string name="explore">Explore</string>
+    <string name="find_diets">Find Diets</string>
+    <string name="find_premade_diets_according_to_your_cuisine">Find premade diets according to your cuisine</string>
+    <string name="find_nutritionist">Find Nutritionist</string>
+    <string name="get_customized_diets_to_achieve_your_health_goal">Get customized diets to achieve your health goal</string>
+    <string name="for_you">For You</string>
+    <string name="activity">Activity</string>
+    <string name="goals">Goals</string>
+    <string name="camera">Camera</string>
+    <string name="list">Diet List</string>
+    <string name="profile">Profile</string>
+    <string name="back">Back</string>
+    <string name="fried_chicken">Fried Chicken</string>
+    <string name="out_of_100">Out of 100</string>
+    <string name="description">Description</string>
+    <string name="macro_nutrients">Macro Nutrients</string>
+    <string name="facts">Facts</string>
+    <string name="similar_items">Similar Items</string>
+    <string name="close">Close</string>
+    <string name="ingridients">Ingridients</string>
+</resources>

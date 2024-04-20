@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".Activity.Activity.FoodInfoActivity">
+
+    <!-- Image at the top -->
+    <!-- Reduce brightness -->
+
+    <!-- Back button -->
+
+    <ImageView
+        android:id="@+id/imageViewTop"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:alpha="0.8"
+        android:scaleType="centerCrop"
+        android:src="@drawable/chick_top"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/icon" />
+
+    <ImageButton
+        android:id="@+id/backButton"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:src="@drawable/icon_back"
+        android:background="@android:color/transparent"
+        android:padding="4dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/imageViewTop"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="26dp"
+        android:contentDescription="@string/icon" />
+
+    <!-- Back text -->
+
+    <!-- Bottom text views -->
+    <TextView
+        android:id="@+id/backText"
+        android:layout_width="50dp"
+        android:layout_height="20dp"
+        android:textSize="18sp"
+        android:text="@string/back"
+        android:textColor="@android:color/white"
+        app:layout_constraintStart_toEndOf="@id/backButton"
+        app:layout_constraintTop_toTopOf="@id/backButton" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/fried_chicken"
+        android:textStyle="bold"
+        android:textSize="25sp"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="@id/imageViewTop"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Box for food rating -->
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="292dp"
+        android:layout_marginBottom="56dp"
+        android:text="@string/blank_text"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="@id/imageViewTop"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="44dp"
+        android:layout_marginBottom="24dp"
+        app:layout_constraintBottom_toBottomOf="@id/imageViewTop"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- Existing View with id ratingBox -->
+        <View
+            android:id="@+id/ratingBox"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:alpha="0.5"
+            android:background="@drawable/round_back" />
+
+        <!-- TextView positioned on top of the existing View -->
+
+        <TextView
+            android:id="@+id/textViewRating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="12dp"
+            android:text="@string/blanknumber"
+            android:textColor="@android:color/white"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/textViewR"
+            android:layout_marginStart="2dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textViewRating"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="6dp"
+            android:text="@string/out_of_100"
+            android:textColor="@android:color/white"
+            android:textSize="12sp" />
+
+    </RelativeLayout>
+
+        <!-- Description label -->
+        <TextView
+            android:id="@+id/description1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/description"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/imageViewTop"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp" />
+
+    <TextView
+        android:id="@+id/descriptionLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/description"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imageViewTop"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp" />
+
+    <!-- Description -->
+    <TextView
+        android:id="@+id/description"
+        android:layout_width="0dp"
+        android:textSize="16sp"
+        android:layout_height="wrap_content"
+        android:text="@string/blank_text"
+        android:textColor="@android:color/black"
+        app:layout_constraintStart_toStartOf="@id/descriptionLabel"
+        app:layout_constraintTop_toBottomOf="@id/descriptionLabel"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp" />
+
+    <!-- Macro Nutrients label -->
+    <TextView
+        android:id="@+id/macroNutrientsLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/macro_nutrients"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/description"
+        android:layout_marginTop="6dp"
+        android:layout_marginStart="16dp" />
+
+
+
+    <!--    <androidx.recyclerview.widget.RecyclerView-->
+<!--        android:id="@+id/recyclerVneutrients"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/macroNutrientsLabel"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        android:layout_marginTop="8dp" />-->
+    <TableLayout
+        android:id="@+id/tableLayoutNutrition"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/table_cell_border"
+        app:layout_constraintTop_toBottomOf="@id/macroNutrientsLabel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp">
+
+        <!-- Table headers -->
+        <TableRow
+            android:paddingStart="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:paddingStart="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:padding="8dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Value"
+                android:textStyle="bold"
+                android:padding="8dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Units"
+                android:textStyle="bold"
+                android:padding="8dp"/>
+
+        </TableRow>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/black"/>
+
+
+    </TableLayout>
+
+    <!-- Servings label -->
+
+    <!-- Facts label -->
+    <TextView
+        android:id="@+id/factsLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/facts"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tableLayoutNutrition"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp" />
+
+    <!-- Group of cards for facts -->
+    <!-- Implement your group of cards here -->
+
+    <!-- Similar Items label -->
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerVfacts"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/factsLabel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp" />
+
+    <!-- Group of cards for similar items -->
+    <!-- Implement your group of cards here -->
+
+    <TextView
+        android:id="@+id/similarItemsLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/similar_items"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@id/recyclerVfacts"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerSitems"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/similarItemsLabel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="20dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="Dietsnap"> #F8B645</color>
+    <color name="R1"> #FAA057</color>
+    <color name="R2"> #9013FE</color>
+    <color name="goal">#F8B546</color>
+    <color name="facts">#F8B944</color>
+    <color name="table">#FDF7F7</color>
+    <color name="foodinfo1">
+        #707070</color>
+    <color name="toolbarshadow">#07B1A1A1</color>
+</resources>

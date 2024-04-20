@@ -1,0 +1,746 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:background="@color/white"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.Activity.MainActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <RelativeLayout
+            android:id="@+id/rlToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="4dp"
+            android:background="@color/toolbarshadow"
+            android:paddingBottom="4dp">
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@color/white"
+                app:elevation="24dp"> <!-- Add elevation to create shadow effect -->
+                <TextView
+                    android:id="@+id/textViewToolbar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/dietsnap"
+                    android:textColor="@color/Dietsnap"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+                <ImageButton
+                    android:id="@+id/imgViewbell"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/icon_bell"
+                    android:background="@color/white"
+                    android:layout_marginStart="204dp"
+                    android:contentDescription="@string/icon" />
+                <ImageButton
+                    android:id="@+id/imgViewmedal"
+                    android:contentDescription="@string/icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/icon_star"
+                    android:layout_marginStart="18dp"
+                    android:background="@color/white"/>
+
+                <ImageButton
+                    android:id="@+id/imgViewChat"
+                    android:contentDescription="@string/icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:layout_marginStart="18dp"
+                    android:src="@drawable/icon_chat" />
+            </com.google.android.material.appbar.MaterialToolbar>
+        </RelativeLayout>
+
+
+
+    </com.google.android.material.appbar.AppBarLayout>
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="?attr/actionBarSize"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/textViewToday"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/today"
+            android:layout_marginTop="18dp"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/textViewDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/blank_text"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/foodinfo1"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+        <RelativeLayout
+            android:id="@+id/rlchart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <!-- Outer Ring Progress -->
+            <ProgressBar
+                android:id="@+id/outerRingProgressBar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:indeterminate="false"
+                android:max="100"
+                android:progress="59"
+                android:progressDrawable="@drawable/outer_progress"
+                android:rotation="-90"
+                android:layout_centerInParent="true" />
+
+            <!-- Inner Progress -->
+            <ProgressBar
+                android:id="@+id/innerProgressBar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="140dp"
+                android:layout_height="140dp"
+                android:indeterminate="false"
+                android:max="100"
+                android:progress="51"
+                android:progressDrawable="@drawable/inner_progress"
+                android:rotation="-90"
+                android:layout_centerInParent="true" />
+            <TextView
+                android:id="@+id/progressText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/set_goal"
+                android:textSize="20sp"
+                android:textColor="@color/black"
+                android:layout_centerInParent="true"/>
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:contentDescription="@string/icon"
+                android:id="@+id/imageView1"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="5dp"
+                android:src="@drawable/apple" />
+
+            <TextView
+                android:id="@+id/textViewDPts"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/diet_points"
+                android:layout_toEndOf="@id/imageView1"
+                android:layout_marginTop="6dp"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/textViewEPts"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/exercise_points"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:layout_toEndOf="@id/imageView2"
+                android:layout_marginTop="6dp"/>
+            <ImageView
+                android:contentDescription="@string/icon"
+                android:id="@+id/imageView2"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="20dp"
+                android:layout_toEndOf="@id/textViewDPts"
+                android:src="@drawable/dumbell" />
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/linear_layout1"
+                android:layout_width="wrap_content"
+                android:gravity="center_horizontal"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/blanknumber"
+                    android:textSize="18sp"
+                    android:textColor="@color/facts"/>
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/cal"
+                    android:textSize="18sp"
+                    android:textColor="@android:color/black"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linear_layout2"
+                android:layout_width="wrap_content"
+                android:gravity="center_horizontal"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/linear_layout1"
+                android:layout_marginStart="60dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/blanknumber"
+                    android:gravity="center_horizontal"
+                    android:layout_marginStart="5dp"
+                    android:textSize="18sp"
+                    android:textColor="@color/facts"/>
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/time"
+                    android:gravity="center_horizontal"
+                    android:textSize="18sp"
+                    android:textColor="@color/black"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linear_layout3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:layout_toEndOf="@id/linear_layout2"
+                android:layout_marginStart="60dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/blanknumber"
+                    android:gravity="center_horizontal"
+                    android:layout_marginStart="3dp"
+                    android:textColor="@color/facts"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/textView6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text="@string/health_score"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+            </LinearLayout>
+        </RelativeLayout>
+        <LinearLayout
+            android:id="@+id/llDots"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal">
+            <ImageView
+                android:contentDescription="@string/icon"
+                android:id="@+id/imageViewDots"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="8dp"
+                android:src="@drawable/dots" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textViewgOALS"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="140dp"
+            android:text="@string/your_goals"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_background"
+            android:padding="16dp">
+            <ImageView
+                android:contentDescription="@string/icon"
+                android:id="@+id/imageViewG"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/goal"
+                android:layout_gravity="center_horizontal"/>
+            <LinearLayout
+                android:id="@+id/llG"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/imageViewG"
+                android:layout_toStartOf="@id/rlp"
+                android:layout_marginStart="25dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textViewG1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/blank_text"
+                    android:textSize="18sp"
+                    android:textColor="@color/black"/>
+
+                <TextView
+                    android:id="@+id/textViewG2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/current_major_goal"
+                    android:textSize="18sp"
+                    android:textColor="@color/foodinfo1"/>
+            </LinearLayout>
+            <RelativeLayout
+                android:id="@+id/rlp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_background"
+                android:layout_marginStart="20dp"
+                android:layout_alignParentEnd="true">
+
+                <!-- ProgressBar Container -->
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true">
+
+                    <!-- ProgressBar -->
+                    <ProgressBar
+                        android:id="@+id/GoalProgressBar"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:indeterminate="false"
+                        android:max="100"
+                        android:progress="59"
+                        android:progressDrawable="@drawable/outer_progress"
+                        android:rotation="90"
+                        android:layout_centerInParent="true" />
+
+                    <!-- TextView to display progress value -->
+                    <TextView
+                        android:id="@+id/progressText2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/blanknumber"
+                        android:textSize="15sp"
+                       android:textColor="@color/black"
+                       android:layout_centerInParent="true"/>
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+        <TextView
+            android:id="@+id/textViewExplore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/explore"
+            android:layout_marginEnd="156dp"
+            android:layout_marginTop="18dp"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <!-- ImageView -->
+            <ImageView
+                android:contentDescription="@string/icon"
+                android:id="@+id/imageViewdiets"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_marginStart="30sp"
+                android:src="@drawable/wom1"
+                android:layout_gravity="center_horizontal"/>
+
+            <!-- LinearLayout containing TextViews -->
+            <LinearLayout
+                android:id="@+id/llfdiets"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginStart="16dp">
+
+                <!-- TextView for Find Diets -->
+                <TextView
+                    android:id="@+id/textViewFindD"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/find_diets"
+                    android:layout_marginTop="18dp"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+                <!-- TextView for description -->
+                <TextView
+                    android:id="@+id/textViewTextD"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/find_premade_diets_according_to_your_cuisine"
+                    android:layout_marginTop="18dp"
+                    android:textColor="@color/foodinfo1"
+                    android:textSize="14sp" />
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <!-- ImageView -->
+
+            <!-- LinearLayout containing TextViews -->
+            <ImageView
+                android:contentDescription="@string/icon"
+                android:id="@+id/imageViewnutri"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="30sp"
+                android:src="@drawable/wom2" />
+
+            <LinearLayout
+                android:id="@+id/llnutri"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginStart="16dp">
+
+                <!-- TextView for Find Nutritionist -->
+                <TextView
+                    android:id="@+id/textViewFindN"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/find_nutritionist"
+                    android:layout_marginTop="18dp"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+                <!-- TextView for description -->
+                <TextView
+                    android:id="@+id/textViewTextN"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/get_customized_diets_to_achieve_your_health_goal"
+                    android:layout_marginTop="18dp"
+                    android:textColor="@color/foodinfo1"
+                    android:textSize="14sp" />
+            </LinearLayout>
+        </LinearLayout>
+        <TextView
+            android:id="@+id/textViewFor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:layout_marginEnd="140dp"
+            android:text="@string/for_you"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_background"
+            android:layout_marginTop="10dp"
+            android:padding="16dp">
+        <ImageView
+            android:contentDescription="@string/icon"
+            android:id="@+id/imageViewF"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/goal"
+            android:layout_gravity="center_horizontal"/>
+        <LinearLayout
+            android:id="@+id/llF"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/imageViewF"
+            android:layout_marginStart="25dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textViewF1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/blank_text"
+                android:textSize="18sp"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:id="@+id/textViewF2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/current_major_goal"
+                android:textSize="18sp"
+                android:textColor="@color/foodinfo1"/>
+        </LinearLayout>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/rounded_background"
+            android:padding="16dp">
+            <ImageView
+                android:contentDescription="@string/icon"
+                android:id="@+id/imageViewF1"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/goal"
+                android:layout_gravity="center_horizontal"/>
+            <LinearLayout
+                android:id="@+id/llF1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/imageViewF1"
+                android:layout_marginStart="25dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textViewF4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/blank_text"
+                    android:textSize="18sp"
+                    android:textColor="@color/black"/>
+
+                <TextView
+                    android:id="@+id/textViewF3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/current_major_goal"
+                    android:textSize="18sp"
+                    android:textColor="@color/foodinfo1"/>
+            </LinearLayout>
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- New bottom toolbar -->
+    <RelativeLayout
+        android:id="@+id/rlBottomToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:elevation="4dp"
+        android:background="@color/toolbarshadow"
+        android:layout_gravity="bottom"
+        android:paddingBottom="4dp">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/bottomToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="#F8F8F8"
+            app:elevation="24dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_marginEnd="20dp"
+                android:baselineAligned="false">
+
+                <!-- First ImageView and TextView pair -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:contentDescription="@string/icon"
+                        android:id="@+id/bottomIcon1"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+
+                        android:src="@drawable/icon_file"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="8dp" />
+
+                    <TextView
+                        android:id="@+id/bottomIconName1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/activity"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="8dp" />
+                </LinearLayout>
+
+                <!-- Repeat the above LinearLayout for additional pairs -->
+                <!-- Second ImageView and TextView pair -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:contentDescription="@string/icon"
+                        android:id="@+id/bottomIcon2"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/icon_bar"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="8dp" />
+
+                    <TextView
+                        android:id="@+id/bottomIconName2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/goals"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="8dp" />
+                </LinearLayout>
+
+                <!-- Third ImageView and TextView pair -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:contentDescription="@string/icon"
+                        android:id="@+id/bottomIcon3"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/icon_camera"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="8dp" />
+
+                    <TextView
+                        android:id="@+id/bottomIconName3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/camera"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="8dp" />
+                </LinearLayout>
+
+                <!-- Fourth ImageView and TextView pair -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:contentDescription="@string/icon"
+                        android:id="@+id/bottomIcon4"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/icon_list"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="8dp" />
+
+                    <TextView
+                        android:id="@+id/bottomIconName4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/list"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="8dp" />
+                </LinearLayout>
+
+                <!-- Fifth ImageView and TextView pair -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:contentDescription="@string/icon"
+                        android:id="@+id/bottomIcon5"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/icon_person"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="8dp" />
+
+                    <TextView
+                        android:id="@+id/bottomIconName5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/profile"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="8dp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+
+
+        </com.google.android.material.appbar.MaterialToolbar>
+
+    </RelativeLayout>
+
+
+
+
+
+
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
