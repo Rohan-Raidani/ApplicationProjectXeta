@@ -1,7 +1,7 @@
 # ApplicationProjectXeta
 
 ## Description
-ApplicationProjectXeta is an Android application developed using Kotlin and XML. It is designed to [briefly describe the purpose or main features of your app].
+ApplicationProjectXeta is an Android application developed using Kotlin and XML.
 
 ## Features
 1. Opens with a splash activity featuring a progress bar.
